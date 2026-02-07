@@ -1051,3 +1051,221 @@ Delay Types:
 ************************************************************/
 
 
+
+
+
+
+
+
+
+/************************************************************
+                 SYSTEM DESIGN BASICS NOTES
+              (Beginner → Interview Friendly)
+************************************************************/
+
+/*==========================================================
+1. WHAT IS SYSTEM DESIGN?
+==========================================================*/
+
+System Design:
+- Process of designing software systems that are scalable, available & maintainable.
+- Focus on architecture, components, data flow & performance.
+- Used in real systems like Instagram, Uber, YouTube. 1
+
+Why Study It?
+- Helps you think like an engineer not just a coder.
+- Core part of backend interviews. 2
+
+
+/*==========================================================
+2. REQUIREMENTS
+==========================================================*/
+
+Functional Requirements:
+- What the system must do.
+- Example: User login, send messages.
+
+Non-Functional Requirements:
+- Performance, scalability, reliability, security. 3
+
+
+/*==========================================================
+3. HLD vs LLD
+==========================================================*/
+
+High Level Design (HLD):
+- Big picture
+- Servers, databases, APIs, services.
+- No code, just architecture. 4
+
+Low Level Design (LLD):
+- Detailed design
+- Classes, methods, data structures. 5
+
+
+/*==========================================================
+4. SCALABILITY & PERFORMANCE
+==========================================================*/
+
+Scalability:
+- Ability to handle growing load.
+
+Vertical Scaling:
+- Add CPU/RAM. 6
+
+Horizontal Scaling:
+- Add more machines. 7
+
+Latency vs Throughput:
+- Latency → Delay in response.
+- Throughput → Requests processed per second. 8
+
+
+/*==========================================================
+5. ARCHITECTURE PATTERNS
+==========================================================*/
+
+Monolithic:
+- Single code base. 9
+
+Microservices:
+- Multiple small services. 10
+
+Pub/Sub Event Driven:
+- Messages queued & consumed asynchronously. 11
+
+
+/*==========================================================
+6. DATABASES IN SYSTEM DESIGN
+==========================================================*/
+
+SQL vs NoSQL:
+- SQL → Structured, ACID
+- NoSQL → Flexible, scalable. 12
+
+Sharding:
+- Data split across servers. 13
+
+Replication:
+- Copies of data for availability. 14
+
+Index:
+- Speeds up queries. 15
+
+B-Tree / B+ Tree:
+- Index structures in databases. 16
+
+
+/*==========================================================
+7. NETWORK & WEB FUNDAMENTALS
+==========================================================*/
+
+Client-Server:
+- Browser asks → Server responds. 17
+
+HTTP/HTTPS:
+- Protocols for web communication.
+
+DNS:
+- Domain name → IP translation. 18
+
+CDN:
+- Cache static content closer to users.
+
+
+/*==========================================================
+8. SYSTEM DESIGN BUILDING BLOCKS
+==========================================================*/
+
+Load Balancer:
+- Distributes traffic to servers. 19
+
+Cache:
+- Stores frequent data (Redis/Memcached). 20
+
+Proxy & API Gateway:
+- Filters & routes requests.
+
+Message Queue:
+- Asynchronous communication (Kafka, RabbitMQ). 21
+
+Heartbeat:
+- Health check between servers. 22
+
+
+/*==========================================================
+9. RELIABILITY & AVAILABILITY
+==========================================================*/
+
+Replication:
+- Multiple copies of data.
+
+Failover:
+- Backup takes over if main fails.
+
+Single Point of Failure:
+- One component failure crashing system → avoid it.
+
+
+/*==========================================================
+10. CONSISTENCY & CAP THEOREM
+==========================================================*/
+
+CAP Theorem:
+- Consistency
+- Availability
+- Partition tolerance
+(You can only strongly satisfy 2). 23
+
+Consistency Models:
+- Strong
+- Eventual
+
+
+/*==========================================================
+11. CACHING STRATEGIES
+==========================================================*/
+
+Cache Invalidation:
+- Keeping cache updated with DB changes.
+
+Eviction Policies:
+- LRU, LFU (Least Recently/ Frequently Used).
+
+
+/*==========================================================
+12. COMMON SYSTEM DESIGN QUESTION EXAMPLES
+==========================================================*/
+
+Design URL Shortener:
+- Hashing
+- DB choice
+- Redirect service
+
+Design Rate Limiter:
+- Limit API calls
+- Use token bucket
+
+Real-World App HLD:
+- Users → Load Balancer → App Servers → DB → Cache
+
+
+/*==========================================================
+13. HOW TO APPROACH IN INTERVIEW
+==========================================================*/
+
+1️⃣ Clarify Requirements  
+2️⃣ Draw HLD blocks  
+3️⃣ Choose DB + Scaling techniques  
+4️⃣ Explain tradeoffs  
+5️⃣ Talk about reliability + security
+
+**Note:** Always explain why you choose something. 24
+
+
+/************************************************************
+                  SYSTEM DESIGN NOTES COMPLETE 💯
+         (BEGINNER → INTERVIEW TOPICS READY)
+************************************************************/
+
+

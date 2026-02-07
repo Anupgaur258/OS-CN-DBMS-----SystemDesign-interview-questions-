@@ -1,0 +1,1053 @@
+/=====================================================
+=            OPERATING SYSTEM COMPLETE NOTES         =
+=        (Striver / TakeUForward OS List)             =
+=====================================================/
+
+
+/*=====================================================
+1. OPERATING SYSTEM (OS)
+=====================================================*/
+
+Operating System (OS):
+OS ek system software hai jo USER aur COMPUTER HARDWARE ke beech interface ka kaam karta hai.
+
+Example:
+User → OS → Hardware (CPU, RAM, Disk)
+
+/* Functions of OS */
+- Process Management
+- Memory Management
+- File Management
+- Device Management
+- Security & Protection
+
+
+/*=====================================================
+2. TYPES OF OPERATING SYSTEM
+=====================================================*/
+
+Batch OS:
+- Similar jobs ko batch me execute karta
+- No user interaction
+Example: Payroll system
+
+Time Sharing OS:
+- Multiple users ek sath kaam karte
+- CPU time slice me divide
+Example: Linux, Windows
+
+Distributed OS:
+- Multiple computers ek system jaise kaam
+Example: Google servers
+
+Real Time OS (RTOS):
+- Time critical systems
+Example: Missile system, Medical devices
+
+
+/*=====================================================
+3. MULTIPROGRAMMING vs MULTITASKING
+=====================================================*/
+
+Multiprogramming:
+- Multiple programs memory me load
+- CPU idle na rahe
+Example: Server systems
+
+Multitasking:
+- Single user multiple tasks run
+Example: Chrome + Music + VS Code
+
+
+/*=====================================================
+4. KERNEL MODE & USER MODE
+=====================================================*/
+
+User Mode:
+- Limited access
+- Direct hardware access nahi
+
+Kernel Mode:
+- Full access
+- OS yahi run hota
+
+System Call:
+User Mode → Kernel Mode
+
+Example:
+read(), write(), fork()
+
+
+/*=====================================================
+5. PROCESS
+=====================================================*/
+
+Process:
+Program jo execution me hai
+
+Process States:
+- New
+- Ready
+- Running
+- Waiting
+- Terminated
+
+Example:
+.c file → compile → program → execution = process
+
+
+/*=====================================================
+6. FUNCTION CALL vs SYSTEM CALL
+=====================================================*/
+
+Function Call:
+- User space
+- Fast
+Example: printf()
+
+System Call:
+- Kernel space
+- OS service
+Example: read(), write()
+
+
+/=====================================================
+PROCESS MANAGEMENT
+=====================================================*/
+
+/*=====================================================
+7. STARVATION & AGING
+=====================================================*/
+
+Starvation:
+- Low priority process ko CPU na milna
+
+Aging:
+- Time ke sath priority increase
+- Starvation avoid karta
+
+
+/*=====================================================
+8. PROCESS SYNCHRONIZATION
+=====================================================*/
+
+Synchronization:
+- Shared data ko safe rakhna
+
+Problem:
+Race Condition
+
+Tools:
+- Mutex
+- Semaphore
+- Monitor
+
+
+/*=====================================================
+9. SEMAPHORE
+=====================================================*/
+
+Semaphore:
+- Integer variable
+- Synchronization ke liye
+
+Types:
+Binary Semaphore:
+- 0 or 1
+- Mutex jaisa
+
+Counting Semaphore:
+- Any integer
+- Multiple resources handle
+
+
+/*=====================================================
+10. DEADLOCK
+=====================================================*/
+
+Deadlock:
+Processes ek dusre ke resources ka wait kare
+
+Deadlock Conditions:
+1. Mutual Exclusion
+2. Hold & Wait
+3. No Preemption
+4. Circular Wait
+
+
+/* Deadlock Prevention */
+- Mutual exclusion avoid
+- Preemption allow
+- Resources order fix
+
+
+/*=====================================================
+11. BANKER'S ALGORITHM
+=====================================================*/
+
+Banker’s Algorithm:
+- Deadlock avoidance algorithm
+- Safe state check karta
+
+Example:
+Bank loan dene se pehle check karta
+safe hai ya nahi
+
+
+/=====================================================
+MEMORY MANAGEMENT
+=====================================================*/
+
+/*=====================================================
+12. MEMORY MANAGEMENT TECHNIQUES
+=====================================================*/
+
+First Fit:
+- Pehli sufficient block allocate
+
+Best Fit:
+- Sabse chhoti suitable block
+
+Worst Fit:
+- Sabse badi block allocate
+
+
+/*=====================================================
+13. VIRTUAL MEMORY
+=====================================================*/
+
+Virtual Memory:
+- Disk ko RAM jaisa use
+- Large programs run kar sakte
+
+Example:
+Paging system
+
+
+/*=====================================================
+14. DYNAMIC BINDING
+=====================================================*/
+
+Dynamic Binding:
+- Address runtime par decide
+- Flexibility zyada
+
+Static Binding:
+- Compile time address fix
+
+
+/*=====================================================
+15. PAGE FAULT
+=====================================================*/
+
+Page Fault:
+- Required page RAM me nahi
+- Disk se load hoti
+
+Valid Page Fault:
+- Page disk me present
+
+Invalid Page Fault:
+- Illegal access → crash
+
+
+/*=====================================================
+16. BELADY'S ANOMALY
+=====================================================*/
+
+Belady’s Anomaly:
+- Frames badhane par page faults badh jate
+
+Occurs in:
+- FIFO algorithm
+
+Does NOT occur in:
+- LRU
+- Optimal
+
+
+/*=====================================================
+17. THRASHING
+=====================================================*/
+
+Thrashing:
+- CPU low usage
+- Paging zyada
+- System slow
+
+Solution:
+- Working set model
+- Increase RAM
+
+
+/*=====================================================
+18. CACHE
+=====================================================*/
+
+Cache:
+- Fast memory
+- CPU aur RAM ke beech
+
+Purpose:
+- Access time reduce
+
+
+/*=====================================================
+19. CACHE MAPPING
+=====================================================*/
+
+Direct Mapping:
+- One block → one cache line
+
+Associative Mapping:
+- Any block → any cache line
+
+
+/=====================================================
+FILE SYSTEM
+=====================================================*/
+
+/*=====================================================
+20. FILE SYSTEM
+=====================================================*/
+
+File System:
+- Files ko store & manage karta
+
+Components:
+- Files
+- Directories
+- Metadata
+
+
+/*=====================================================
+21. TYPES OF FILE SYSTEM
+=====================================================*/
+
+FAT
+NTFS
+EXT3
+EXT4
+
+
+/*=====================================================
+22. FILE ALLOCATION
+=====================================================*/
+
+Contiguous Allocation:
+- Continuous blocks
+
+Linked Allocation:
+- Pointer based
+
+Indexed Allocation:
+- Index block use
+
+
+/*=====================================================
+23. FRAGMENTATION
+=====================================================*/
+
+Internal Fragmentation:
+- Memory waste inside block
+
+External Fragmentation:
+- Free space scattered
+
+
+/=====================================================
+I/O SYSTEM
+=====================================================*/
+
+/*=====================================================
+24. BLOCKING vs NON-BLOCKING
+=====================================================*/
+
+Blocking:
+- Process wait karta
+
+Non-Blocking:
+- Process continue karta
+
+
+/*=====================================================
+25. SYNCHRONOUS vs ASYNCHRONOUS
+=====================================================*/
+
+Synchronous:
+- Step by step execution
+
+Asynchronous:
+- Parallel execution
+
+
+/*=====================================================
+26. SPOOLING
+=====================================================*/
+
+Spooling:
+- I/O ko disk me store
+- Sequential execution
+
+Example:
+Printer queue
+
+
+/=====================================================
+STORAGE MANAGEMENT & SECURITY
+=====================================================*/
+
+/*=====================================================
+27. SECURITY THREATS & VULNERABILITIES
+=====================================================*/
+
+Threats:
+- Virus
+- Worm
+- Trojan
+- Phishing
+
+Vulnerabilities:
+- Weak password
+- Unpatched software
+
+
+/=====================================================
+=              OS NOTES COMPLETED 💯                 =
+=====================================================*/
+
+
+
+
+
+
+
+
+
+
+/=====================================================
+=        COMPUTER NETWORKS (CN) COMPLETE NOTES        =
+=     (Most Asked Interview Topics – Simple)         =
+=====================================================/
+
+
+/*=====================================================
+1. INTRODUCTION TO COMPUTER NETWORKS
+=====================================================*/
+
+Computer Network:
+Do ya do se zyada computers ka group jo data share kare.
+
+Example:
+Internet, Office LAN
+
+
+Types of Network:
+LAN – Local Area Network (Office, Home)
+MAN – Metropolitan Area Network (City)
+WAN – Wide Area Network (Internet)
+
+
+Hub vs Switch vs Router:
+Hub:
+- Broadcast device
+- No intelligence
+
+Switch:
+- MAC address use
+- Fast
+
+Router:
+- IP address use
+- Internet connect karta
+
+
+Network Topology:
+Bus, Star, Ring, Mesh
+
+Most used:
+Star topology (easy + fast)
+
+
+Nodes & Links:
+Node = device
+Link = connection
+
+
+/=====================================================
+2. OSI MODEL
+=====================================================*/
+
+OSI Model:
+7-layer reference model for networking
+
+Layers (Top → Bottom):
+7 Application
+6 Presentation
+5 Session
+4 Transport
+3 Network
+2 Data Link
+1 Physical
+
+Interview Trick:
+"All People Seem To Need Data Processing"
+
+
+/=====================================================
+3. TCP/IP MODEL
+=====================================================*/
+
+TCP/IP Model:
+Practical model used in real networks
+
+Layers:
+- Application
+- Transport
+- Internet
+- Network Access
+
+
+OSI vs TCP/IP:
+OSI = theoretical
+TCP/IP = practical
+
+
+/=====================================================
+PHYSICAL LAYER
+=====================================================*/
+
+Data Transmission:
+- Simplex
+- Half Duplex
+- Full Duplex
+
+
+Bandwidth:
+Data transfer capacity
+Unit: bps
+
+
+Transmission Media:
+Wired:
+- Twisted Pair
+- Coaxial
+- Optical Fiber
+
+Wireless:
+- Radio
+- Microwave
+- Infrared
+
+
+/=====================================================
+DATA LINK LAYER
+=====================================================*/
+
+Data Link Layer:
+- Node to node delivery
+- Error control
+
+Functions:
+- Framing
+- Error detection
+- Flow control
+
+
+Error Detection:
+- Parity bit
+- CRC
+- Checksum
+
+
+Data Link Protocols:
+- HDLC
+- PPP
+
+
+Multiple Access Protocols:
+- ALOHA
+- CSMA/CD
+- CSMA/CA
+
+
+MAC Address:
+- 48-bit address
+- Unique
+- Assigned by manufacturer
+
+
+Channel Allocation Problem:
+- Multiple users ek channel share kare
+Solution:
+TDMA, FDMA
+
+
+Data Link Switching:
+Switch MAC table use karta
+
+
+Ethernet LAN:
+Most popular LAN technology
+
+
+/=====================================================
+NETWORK LAYER
+=====================================================*/
+
+Network Layer:
+- Source to destination delivery
+- Routing
+
+IP Addressing:
+IPv4 – 32 bit
+IPv6 – 128 bit
+
+
+Subnetting:
+IP ko parts me divide
+Purpose:
+- Efficient IP usage
+- Security
+
+
+ICMP:
+Error reporting protocol
+Example:
+Ping command
+
+
+Fragmentation:
+Large packet → small fragments
+
+
+Tunneling:
+Ek protocol ke andar dusra
+
+
+Gateway vs Router:
+Router:
+Same network
+
+Gateway:
+Different networks
+
+
+Count to Infinity Problem:
+Routing loop problem
+Solution:
+Split horizon, poison reverse
+
+
+/=====================================================
+TRANSPORT LAYER
+=====================================================*/
+
+Transport Layer:
+End to end communication
+
+
+Elements:
+- Segmentation
+- Error control
+- Flow control
+
+
+TCP:
+- Connection oriented
+- Reliable
+- Slow
+
+Example:
+HTTP, FTP
+
+
+UDP:
+- Connectionless
+- Fast
+- Unreliable
+
+Example:
+Video streaming, Gaming
+
+
+TCP State Transition:
+CLOSED → LISTEN → SYN → ESTABLISHED → FIN
+
+
+3-Way Handshaking:
+1. SYN
+2. SYN-ACK
+3. ACK
+
+
+Congestion Control:
+- Slow Start
+- Congestion Avoidance
+- Fast Retransmit
+
+
+/=====================================================
+SESSION LAYER
+=====================================================*/
+
+Session Layer:
+- Session establish
+- Session maintain
+- Session terminate
+
+
+/=====================================================
+PRESENTATION LAYER
+=====================================================*/
+
+Presentation Layer:
+- Data format
+- Encryption
+- Compression
+
+
+/=====================================================
+APPLICATION LAYER
+=====================================================*/
+
+DNS:
+Domain name → IP address
+
+Example:
+google.com → IP
+
+
+WWW:
+Web services using HTTP
+
+
+HTTP:
+Stateless protocol
+Port: 80
+
+
+FTP:
+File transfer protocol
+Port: 21
+
+
+SMTP:
+Email send protocol
+Port: 25
+
+
+DHCP:
+Automatic IP assign karta
+
+
+/=====================================================
+NETWORK SECURITY
+=====================================================*/
+
+Network Security:
+Data ko protect karna
+
+
+Cryptography:
+Data encryption technique
+
+
+Encryption Types:
+Symmetric:
+DES, AES
+
+Asymmetric:
+RSA, Diffie-Hellman
+
+
+Hash Function:
+Fixed size output
+Example:
+SHA-256
+
+
+Digital Signature:
+Authentication + Integrity
+
+
+Security Protocols:
+SSL, TLS, HTTPS
+
+
+VPN:
+Secure private network
+
+
+Network Attacks:
+- DoS
+- Man-in-the-middle
+- Phishing
+
+
+/=====================================================
+NETWORK TROUBLESHOOTING
+=====================================================*/
+
+Ping Command:
+Check connectivity
+
+
+Delay Types:
+- Processing delay
+- Queuing delay
+- Transmission delay
+- Propagation delay
+
+
+/=====================================================
+=      COMPUTER NETWORKS NOTES COMPLETED 💯          =
+=====================================================*/
+
+
+
+
+
+
+
+
+
+
+/************************************************************
+                    DBMS COMPLETE NOTES
+            (BEGINNER → EXAM → INTERVIEW FRIENDLY)
+************************************************************/
+
+/*==========================================================
+1️⃣ INTRODUCTION TO DBMS
+==========================================================*/
+
+-- Data:
+-- Raw facts (numbers, text, symbols) without meaning
+-- Example: 101, Anup, 90
+
+-- Database:
+-- Organized collection of related data
+-- Stored in tables for easy access & management
+
+-- File System vs DBMS:
+-- File System: Redundancy, no security, hard to manage
+-- DBMS: Less redundancy, security, concurrency, backup
+
+-- DBMS:
+-- Software to store, retrieve, manage data efficiently
+-- Examples: MySQL, Oracle, PostgreSQL
+
+-- Applications of DBMS:
+-- Banking, Railway reservation, College systems, E-commerce
+
+-- Data Abstraction (3 Levels):
+-- Physical level   → How data stored
+-- Logical level    → What data stored
+-- View level       → What user sees
+
+-- 3-Tier Architecture:
+-- Presentation layer (UI)
+-- Application layer (Logic)
+-- Database layer (DBMS)
+
+
+/*==========================================================
+2️⃣ TYPES OF DATABASE
+==========================================================*/
+
+-- Hierarchical Database → Tree structure
+-- Network Database      → Graph structure
+-- Relational Database   → Tables (Most popular)
+-- NoSQL Database        → Big data, flexible schema
+
+
+/*==========================================================
+3️⃣ DATA MODELS
+==========================================================*/
+
+-- Data Model:
+-- Structure of data + relationship + constraints
+
+-- Types:
+-- Object-based model (ER Model)
+-- Record-based model (Relational Model)
+
+-- ER Model:
+-- Entity       → Real-world object (Student)
+-- Attribute    → Property (RollNo, Name)
+-- Relationship → Connection between entities
+
+-- ER Diagram:
+-- Rectangle → Entity
+-- Oval      → Attribute
+-- Diamond   → Relationship
+
+-- Relational Model:
+-- Data stored in tables (rows & columns)
+
+
+/*==========================================================
+4️⃣ RDBMS
+==========================================================*/
+
+-- RDBMS:
+-- Relational Database Management System
+-- Data stored in tables with relations
+
+-- Table Components:
+-- Row (Tuple)      → Single record
+-- Column (Field)   → Attribute
+-- Cell             → Intersection
+
+-- Intension:
+-- Structure of table (schema)
+
+-- Extension:
+-- Actual data stored in table
+
+-- Keys:
+-- Primary Key  → Unique + Not Null
+-- Foreign Key  → References primary key
+-- Candidate Key→ Possible primary keys
+-- Super Key    → Set of attributes for uniqueness
+
+-- Normalization:
+-- Remove redundancy & anomalies
+
+-- 1NF → Atomic values
+-- 2NF → No partial dependency
+-- 3NF → No transitive dependency
+
+-- Denormalization:
+-- Combine tables to improve performance
+-- Used when READ is more frequent
+
+
+/*==========================================================
+5️⃣ SQL (STRUCTURED QUERY LANGUAGE)
+==========================================================*/
+
+-- SQL Commands:
+-- DDL → CREATE, ALTER, DROP
+-- DML → INSERT, UPDATE, DELETE
+-- DQL → SELECT
+-- DCL → GRANT, REVOKE
+-- TCL → COMMIT, ROLLBACK
+
+-- Operators:
+-- Arithmetic → + - * /
+-- Comparison → = != > <
+-- Logical    → AND OR NOT
+
+-- Aggregate Functions:
+-- COUNT(), SUM(), AVG(), MIN(), MAX()
+
+-- Sub Query:
+-- Query inside another query
+-- Used with SELECT, INSERT, UPDATE
+
+
+/*==========================================================
+6️⃣ TRANSACTIONS & CONCURRENCY CONTROL
+==========================================================*/
+
+-- Transaction:
+-- Set of operations executed as a single unit
+
+-- ACID Properties:
+-- Atomicity  → All or nothing
+-- Consistency→ Valid state
+-- Isolation  → No interference
+-- Durability → Permanent save
+
+-- Schedule:
+-- Serial   → One transaction at a time
+-- Parallel → Multiple transactions together
+
+-- Isolation Levels:
+-- Read Uncommitted
+-- Read Committed
+-- Repeatable Read
+-- Serializable
+
+-- Serializability:
+-- Ensures same result as serial execution
+
+-- Locking Protocols:
+-- Shared Lock    → Read
+-- Exclusive Lock → Write
+
+
+/*==========================================================
+7️⃣ QUERY OPTIMIZATION
+==========================================================*/
+
+-- Goal:
+-- Reduce query execution time
+
+-- Techniques:
+-- Proper indexing
+-- Avoid SELECT *
+-- Use WHERE clause
+-- Use joins efficiently
+
+-- Indexing:
+-- Improves search speed
+-- Types:
+-- Primary Index
+-- Secondary Index
+-- Composite Index
+
+-- B-Tree:
+-- Balanced tree
+-- Used for indexing
+
+-- B+ Tree:
+-- Data only at leaf nodes
+-- Faster range queries
+
+
+/*==========================================================
+8️⃣ SCALABILITY & PERFORMANCE
+==========================================================*/
+
+-- Vertical Scaling:
+-- Increase CPU, RAM
+-- Limited & expensive
+
+-- Horizontal Scaling:
+-- Add more machines
+-- More scalable
+
+-- Sharding:
+-- Split data across servers
+-- Used in large databases
+
+
+/*==========================================================
+9️⃣ DATA INTEGRITY & SECURITY
+==========================================================*/
+
+-- Data Integrity:
+-- Accuracy & consistency of data
+
+-- Constraints:
+-- NOT NULL
+-- UNIQUE
+-- PRIMARY KEY
+-- FOREIGN KEY
+-- CHECK
+
+-- RBAC (Role Based Access Control):
+-- Access based on roles (Admin, User)
+
+-- Encryption:
+-- Convert data into unreadable format
+-- Protects sensitive data
+
+/************************************************************
+                 🔥 DBMS NOTES COMPLETE 🔥
+************************************************************/
+
+
